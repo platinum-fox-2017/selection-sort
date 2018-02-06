@@ -1,4 +1,3 @@
-// Solution 1 ----------------------------------------------------------------------------------------
 function selectionSort(arr){
   var minNum = arr[0];
 
@@ -24,18 +23,7 @@ function findMin(arr){
   return indexMin;
 }
 
-// Solution 2 ----------------------------------------------------------------------------------------
-function selectionSort(arr){
-  var minNum = arr[0];
-
-  for(var i = 0; i < arr.length; i++){
-    let indexMin = arr.indexOf(arr.slice(i).reduce((current, value, index) => (value<current)?value:current));
-    let temp = arr.splice(i,1,arr[indexMin]);
-    arr.splice(indexMin,1,temp[0]);
-  }
-  return arr;
-}
 
 console.log(selectionSort([33,2,52,106,73]))
 
-console.log(selectionSort([33,2,52,106,54]))
+console.log(selectionSort([40, 18, 22, 32, 90, 10, 10, 22, 8]))
