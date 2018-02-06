@@ -1,30 +1,16 @@
-'use strict'
-
-var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8]
-var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
-
-function ownSort(arr) {
-  // Your sorting code
-  return arr
+const binarySort = (input) => {
+  for (let i = 0; i < input.length; i++) {
+    let min = input[i]
+    for (let j = i + 1; j < input.length; j++) {
+      if (input[j] < min) {
+        min = input[j]
+        input[j] = input[i]
+        input[i] = min
+      }
+    }
+  }
+  return input
 }
 
-function binarySearch (search, array) {
-  // Your searching code
-  return 0;
-}
-
-var arrayGenapSorted = ownSort(testArrayGenap)
-var arrayGanjilSorted = ownSort(testArrayGanjil)
-
-// Driver code
-console.log(binary_search(8, arrayGenapSorted))
-console.log(binary_search(10, arrayGenapSorted))
-console.log(binary_search(33, arrayGenapSorted))
-
-console.log(binary_search(53, arrayGanjilSorted))
-console.log(binary_search(3, arrayGanjilSorted))
-console.log(binary_search(2, arrayGanjilSorted))
-
-module.exports = {
-  binary_search
-}
+console.log(binarySort([33, 2, 52, 106, 73])) // length 5
+console.log(binarySort([13, 5, 22, 99, 11]))
