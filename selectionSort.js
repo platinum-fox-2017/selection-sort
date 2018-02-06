@@ -1,3 +1,4 @@
+//Solution 1 - Using for loop --------------------------------------------------------
 function selectionSort(arr){
   var minNum = arr[0];
 
@@ -21,6 +22,22 @@ function findMin(arr){
     }
   }
   return indexMin;
+}
+
+//Solution 2 - Using recursive --------------------------------------------------------
+function selectionSort(arr){
+  let min = [arr[0]];
+  let indexMin = 0;
+  if(arr.length==1)
+    return arr;
+  for (var i = 0; i < arr.length; i++){
+    if(arr[i]<min[0]){
+      min[0] = arr[i];
+      indexMin = i;
+    }
+  }
+  arr.splice(indexMin,1);
+  return min.concat(selectionSort(arr));
 }
 
 
