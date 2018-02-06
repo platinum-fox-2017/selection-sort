@@ -4,11 +4,9 @@ function selectSort(input){
 
   for(var i=0; i<input.length; i++){
     minIndex = i
-    debugger
     for(var j=i+1; j<input.length; j++){
       if(input[j] < input[minIndex]){
         minIndex = j
-        debugger
       }
     }
     temp = input[i]
