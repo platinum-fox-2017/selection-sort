@@ -1,29 +1,20 @@
-
-
 function selectionSort(arr) {
     //start your code here
     // console.log(arr[0]); // 33
-
-
 
     var hasilSort = [];
 
     while (arr.length != 0) {
         var angkaMin = arr[0];    
+        var indexMin = 0;
         for (var i = 0; i < arr.length; i++) {
             if (arr[i] < angkaMin) {
                 angkaMin = arr[i];
+                indexMin = i;
             }
         }
         hasilSort.push(angkaMin);
         // console.log(angkaMin); // 2
-
-        var indexMin = 0;
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] == angkaMin) {
-                indexMin = i;
-            }
-        }        
         // console.log(indexMin); // 1
 
         arr.splice(indexMin, 1);
