@@ -5,12 +5,11 @@ function selectionSort(input) {
   for(var j=0;j<input.length;j++){
         temp=j;
 
-        for(var i=j+1;i<input.length;i++)
-          {
+        for(var i=j+1;i<input.length;i++){
               if(input[i]<input[temp]){
                   temp=i;
               }
-          }
+        }
 
         arr=input[j];
         input[j]=input[temp];
